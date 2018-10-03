@@ -1,7 +1,13 @@
 package com.gpetuhov.android.sampletoothpick.model
 
-class Jeep : Car {
-    val engine = Diesel()
+import javax.inject.Inject
 
-    override fun getEngineType() = engine.getType()
+// Classes, that are injected, must have a constructor annotated with @Inject annotation
+class Jeep @Inject constructor() : Car {
+
+//    @Inject
+//    lateinit var engine: Engine
+
+//    override fun getEngineType() = engine.getType()
+    override fun getEngineType() = "sdfdsf"
 }
