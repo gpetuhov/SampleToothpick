@@ -1,8 +1,8 @@
 package com.gpetuhov.android.sampletoothpick
 
 import android.app.Application
-import com.gpetuhov.android.sampletoothpick.model.Diesel
-import com.gpetuhov.android.sampletoothpick.model.Engine
+import com.gpetuhov.android.sampletoothpick.engine.Diesel
+import com.gpetuhov.android.sampletoothpick.engine.Engine
 import toothpick.Toothpick
 import toothpick.config.Module
 
@@ -22,9 +22,13 @@ class SampleToothpickApp : Application() {
             init {
                 // Tell Toothpick to inject Diesel instances for
                 // the injected values of type Engine.
+                // Since this is the module of the root scope,
+                // this rule will be valid throughout the application.
                 bind(Engine::class.java).to(Diesel::class.java)
             }
         })
-//        Toothpick.inject(this, appScope)
+
+        // Our application class has no injected properties,
+        // so no need to call Toothpick.inject() here.
     }
 }
