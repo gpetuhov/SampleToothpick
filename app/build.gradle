@@ -42,4 +42,9 @@ dependencies {
     // Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    // Toothpick
+    implementation 'com.github.stephanenicolas.toothpick:toothpick-runtime:1.1.3'
+    implementation 'com.github.stephanenicolas.toothpick:smoothie:1.1.3'
+    kapt 'com.github.stephanenicolas.toothpick:toothpick-compiler:1.1.3'
 }
